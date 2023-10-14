@@ -9,9 +9,7 @@ import java.time.LocalDateTime;
 public class FxDealerApplication {
 
 	public static void main(String[] args) {
-		System.out.println(LocalDateTime.now());
 		SpringApplication.run(FxDealerApplication.class, args);
-
 	}
 
 }

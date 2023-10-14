@@ -1,0 +1,8 @@
+app:
+  datasource:
+    main:
+      driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/warehousedb
+    username: postgres-spring
+    password: 'password'
+    pool-size: 30

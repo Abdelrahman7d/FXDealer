@@ -1,0 +1,22 @@
+version: '3'
+services:
+  spring-app:
+    image: postgres  # Replace with your Spring Boot application image
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-spring
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/warehousedb
+      SPRING_DATASOURCE_USERNAME: postgres-spring
+      SPRING_DATASOURCE_PASSWORD: password
+    volumes:
+      - ./src/main/resources/db/migration:/flyway/sql
+
+  postgres-spring:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: warehousedb
